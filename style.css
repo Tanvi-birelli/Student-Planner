@@ -1,0 +1,236 @@
+/* Existing Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #111;
+    color: #fff;
+}
+
+header {
+    background-color: #6C9FFB;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+.container {
+    display: flex;
+    flex: 1;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #222;
+}
+
+.sidebar ul {
+    width: 200px;
+    text-align: left;
+    list-style: none;
+}
+
+.sidebar ul li {
+    padding: 0.5rem 0;
+    margin: 2rem 0;
+    width: 100%;
+}
+
+.sidebar ul a {
+    padding:2rem 5rem;
+    padding: 0.5rem 0;
+    margin:1rem;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.sidebar ul li:hover {
+    background-color: #111;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1rem;
+    background-color: #111;
+}
+
+#courses-container, #resources-container, #tasks-container, #schedules-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #333;
+    width: calc(33.333% - 40px);
+    box-sizing: border-box;
+}
+
+button {
+    font-size:1rem;
+    background-color: #6C9FFB;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0.5rem 0; /* Added margin */
+}
+
+button:hover {
+    background-color: #4a7ac7;
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+.card p {
+    margin: 10px 0;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    color: #111;
+    background-color:#fff ;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* New Styles for Form Elements */
+#landingPageMain > form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #222; /* Card background color */
+    padding: 2rem; /* Padding inside the card */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for card effect */
+    width: 100%;
+    max-width: 400px; /* Max width for the card */
+    gap: 1rem; /* Space between form elements */
+}
+form input,form button {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form button {
+    background-color: #6C9FFB;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #4a7ac7;
+}
+
+#landingPageMain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 80px); /* Adjust if header height changes */
+    padding: 1rem; /* Add some padding to avoid content touching edges */
+}
+#landingPageMain > form {
+    margin: 1rem;
+}
+
+/* Existing Styles ... */
+
+#profilePageMain > form {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #222;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    gap: 1rem;
+  }
+  
+  #passwordForm {
+    margin-top: 2rem;
+  }
+  
+  #passwordForm input,
+  #profileForm input,
+  #profileForm button,
+  #passwordForm button {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  #passwordForm button,
+  #profileForm button {
+    background-color: #6C9FFB;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #passwordForm button:hover,
+  #profileForm button:hover {
+    background-color: #4a7ac7;
+  }
+  

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Management - Tasks</title>
+    <!--style sheet-->
+    <link rel="stylesheet" href="css/style.css">
+    <!--Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/1591172ab3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!--Heading-->
+    <header>
+        <h1>Tasks</h1>
+    </header>
+
+    <!--container-->
+    <div class="container">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="main.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="courses.html"><i class="fa-solid fa-book-open"></i> Courses</a></li>
+                <li><a href="resources.html"><i class="fa-solid fa-link"></i> Resources</a></li>
+                <li><a href="tasks.html"><i class="fa-solid fa-list-check"></i> Tasks</a></li>
+                <li><a href="schedules.html"><i class="fa-solid fa-calendar"></i> Schedules</a></li>
+                <li><a href="profile.html"><i class="fa-solid fa-user"></i> Profile</a></li>
+                <li><button id="logoutButton">Logout</button></li>
+            </ul>
+        </aside>
+        <main class="content">
+            <div id="tasks-container"></div>
+            <div class="add-task">
+                <button id="add-task-btn">Add Task</button>
+            </div>
+        </main>
+    </div>
+    
+    <!--Javascript links-->
+    <script src="js/tasks.js"></script>
+    <script src="js/modalFunctions.js"></script>
+    <script src="js/auth.js"></script>
+
+    <!--Add task form-->
+<div id="addTaskModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('addTaskModal')">&times;</span>
+        <h2>Add Task</h2>
+
+        <form id="addTaskForm">
+            <label for="taskTitle">Title:</label>
+            <input type="text" id="taskTitle" name="taskTitle" required>
+            
+            <label for="taskDescription">Description:</label>
+            <textarea id="taskDescription" name="taskDescription" required></textarea>
+            
+            <label for="taskDueDate">Due Date:</label>
+            <input type="date" id="taskDueDate" name="taskDueDate" required>
+            
+            <label for="taskPriority">Priority:</label>
+            <select id="taskPriority" name="taskPriority" required>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+            
+            <button type="submit">Add Task</button>
+        </form>
+    </div>
+</div>
+
+<!--Edit task form-->
+<div id="editTaskModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('editTaskModal')">&times;</span>
+        <h2>Edit Task</h2>
+        <form id="editTaskForm">
+            <input type="hidden" id="editTaskFormTaskId" name="taskId">
+            <label for="editTaskFormTaskTitle">Title:</label>
+            <input type="text" id="editTaskFormTaskTitle" name="taskTitle" required>
+            
+            <label for="editTaskFormTaskDescription">Description:</label>
+            <textarea id="editTaskFormTaskDescription" name="taskDescription" required></textarea>
+            
+            <label for="editTaskFormTaskDueDate">Due Date:</label>
+            <input type="date" id="editTaskFormTaskDueDate" name="taskDueDate" required>
+            
+            <label for="editTaskFormTaskPriority">Priority:</label>
+            <select id="editTaskFormTaskPriority" name="taskPriority" required>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+            
+            <button type="submit" id="editTaskFormSaveChangesButton">Save Changes</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

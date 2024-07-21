@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Management - Resources</title>
+    <!--style sheet-->
+    <link rel="stylesheet" href="css/style.css">
+    <!--Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/1591172ab3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!--Heading-->
+    <header>
+        <h1>Resources</h1>
+    </header>
+    <!--Container-->
+    <div class="container">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="main.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="courses.html"><i class="fa-solid fa-book-open"></i> Courses</a></li>
+                <li><a href="resources.html"><i class="fa-solid fa-link"></i> Resources</a></li>
+                <li><a href="tasks.html"><i class="fa-solid fa-list-check"></i> Tasks</a></li>
+                <li><a href="schedules.html"><i class="fa-solid fa-calendar"></i> Schedules</a></li>
+                <li><a href="profile.html"><i class="fa-solid fa-user"></i> Profile</a></li>
+                <li><button id="logoutButton">Logout</button></li>
+            </ul>
+        </aside>
+        <main class="content">
+            <div id="resources-container"></div>
+            <div class="add-rescource">
+                <button id="add-resource-btn">Add Resource</button>
+            </div>
+        </main>
+    </div>
+    <!--JavaScript links-->
+    <script src="js/resources.js"></script>
+    <script src="js/modalFunctions.js"></script>
+    <script src="js/auth.js"></script>
+
+    <!--Add resource form-->
+    <div id="addResourceModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('addResourceModal')">&times;</span>
+            <h2>Add Resource</h2>
+            <form id="addResourceForm">
+                <label for="resourceTitle">Title:</label>
+                <input type="text" id="resourceTitle" name="resourceTitle" required>
+                <label for="resourceLink">Link:</label>
+                <input type="url" id="resourceLink" name="resourceLink" required>
+                <button type="submit">Add Resource</button>
+            </form>
+        </div>
+    </div>
+    
+    <!--Edit resource form-->
+    <div id="editResourceModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('editResourceModal')">&times;</span>
+            <h2>Edit Resource</h2>
+            <form id="editResourceForm">
+                <input type="hidden" id="editResourceFormResourceId" name="resourceId">
+                <label for="resourceTitle">Title:</label>
+                <input type="text" id="editResourceFormResourceTitle" name="resourceTitle" required>
+                <label for="resourceLink">Link:</label>
+                <input type="url" id="editResourceFormResourceLink" name="resourceLink" required>
+                <button type="submit" id="editResourceFormSaveChangesButton">Save Changes</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

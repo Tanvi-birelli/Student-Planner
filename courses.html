@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Management - Courses</title>
+    <!--style sheet-->
+    <link rel="stylesheet" href="css/style.css">
+    <!--Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/1591172ab3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!--Header-->
+    <header>
+        <h1>Courses</h1>
+    </header>
+    <!--container-->
+    <div class="container">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="main.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="courses.html"><i class="fa-solid fa-book-open"></i> Courses</a></li>
+                <li><a href="resources.html"><i class="fa-solid fa-link"></i> Resources</a></li>
+                <li><a href="tasks.html"><i class="fa-solid fa-list-check"></i> Tasks</a></li>
+                <li><a href="schedules.html"><i class="fa-solid fa-calendar"></i> Schedules</a></li>
+                <li><a href="profile.html"><i class="fa-solid fa-user"></i> Profile</a></li>
+                <li><button id="logoutButton">Logout</button></li>
+            </ul>
+        </aside>
+        <main class="content">
+            <div id="courses-container"></div>
+            <div class="add-course">
+                <button id="add-course-btn">Add Course</button>
+            </div>
+        </main>
+    </div>
+    <script src="js/courses.js"></script>
+    <script src="js/modalFunctions.js"></script>
+    <script src="js/auth.js"></script>
+    <!-- Add course form -->
+    <div id="addCourseModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('addCourseModal')">&times;</span>
+            <h2>Add Course</h2>
+            <form id="addCourseForm" enctype="multipart/form-data">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+                
+                <label for="code">Code:</label>
+                <input type="text" id="code" name="code" required>
+                
+                <label for="instructor">Instructor:</label>
+                <input type="text" id="instructor" name="instructor" required>
+                
+                <label for="syllabusFormat">Syllabus Format:</label>
+                <select id="syllabusFormat" name="syllabusFormat" required>
+                    <option value="text">Text</option>
+                    <option value="pdf">PDF</option>
+                    <option value="image">Image</option>
+                </select>
+
+                <div id="textContentWrapper">
+                    <label for="syllabusContent">Syllabus Content (Text):</label>
+                    <textarea id="syllabusContent" name="syllabusContent"></textarea>
+                </div>
+
+                <div id="fileUploadWrapper">
+                    <label for="syllabusFile">Upload Syllabus (PDF/Image):</label>
+                    <input type="file" id="syllabusFile" name="syllabusFile" accept=".pdf,image/*">
+                </div>
+                <button type="submit">Add Course</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Edit course form -->
+<div id="editCourseModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('editCourseModal')">&times;</span>
+        <h2>Edit Course</h2>
+        <form id="editCourseForm">
+            <input type="hidden" id="editCourseFormCourseId" name="courseId">
+            <label for="editCourseFormCourseTitle">Title:</label>
+            <input type="text" id="editCourseFormCourseTitle" name="courseTitle" required>
+            <label for="editCourseFormCourseCode">Code:</label>
+            <input type="text" id="editCourseFormCourseCode" name="courseCode" required>
+            <label for="editCourseFormCourseInstructor">Instructor:</label>
+            <input type="text" id="editCourseFormCourseInstructor" name="courseInstructor" required>
+            <label for="editCourseFormSyllabusFormat">Syllabus Format:</label>
+            <select id="editCourseFormSyllabusFormat" name="syllabusFormat" required>
+                <option value="text">Text</option>
+                <option value="pdf">PDF</option>
+                <option value="image">Image</option>
+            </select>
+
+            <div id="editCourseFormTextContentWrapper">
+                <label for="editCourseFormSyllabusContent">Syllabus Content (Text):</label>
+                <textarea id="editCourseFormSyllabusContent" name="syllabusContent"></textarea>
+            </div>
+
+            <div id="editCourseFormFileUploadWrapper">
+                <label for="editCourseFormSyllabusFile">Upload Syllabus (PDF/Image):</label>
+                <input type="file" id="editCourseFormSyllabusFile" name="syllabusFile" accept=".pdf,image/*">
+            </div>
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+</div>
+<!-- View Course Details Modal -->
+<div id="viewCourseModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('viewCourseModal')">&times;</span>
+        <h2 id="modal-course-title">Course Title</h2>
+        <p id="modal-course-code">Course Code</p>
+        <p id="modal-course-instructor">Course Instructor</p>
+        <p id="modal-syllabus">Syllabus Content</p>
+    </div>
+</div>
+
+</body>
+</html>

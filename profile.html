@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <!--style sheet-->
+  <link rel="stylesheet" href="css/style.css">
+  <!--Google Font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <!--Font Awesome-->
+  <script src="https://kit.fontawesome.com/1591172ab3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <h1>User Profile</h1>
+  </header>
+  <div class="container">
+    <aside class="sidebar">
+      <ul>
+        <li><a href="main.html"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="courses.html"><i class="fa-solid fa-book-open"></i> Courses</a></li>
+        <li><a href="resources.html"><i class="fa-solid fa-link"></i> Resources</a></li>
+        <li><a href="tasks.html"><i class="fa-solid fa-list-check"></i> Tasks</a></li>
+        <li><a href="schedules.html"><i class="fa-solid fa-calendar"></i> Schedules</a></li>
+        <li><a href="profile.html"><i class="fa-solid fa-user"></i> Profile</a></li>
+        <li><button id="logoutButton">Logout</button></li>
+      </ul>
+    </aside>
+    <main class="content">
+      <h2>Profile</h2>
+      <form id="profileForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Name" required />
+      
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Email" required />
+      
+        <label for="oldPassword">Old Password:</label>
+        <input type="password" id="oldPassword" placeholder="Old Password" />
+      
+        <label for="newPassword">New Password:</label>
+        <input type="password" id="newPassword" placeholder="New Password" />
+      
+        <button type="submit">Update Profile</button>
+      </form>      
+    </main>
+  </div>
+  <script src="js/auth.js"></script>
+  <script src="js/profile.js"></script>
+</body>
+</html>

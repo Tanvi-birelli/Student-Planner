@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Management - Schedules</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1591172ab3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1>Schedules</h1>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="main.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="courses.html"><i class="fa-solid fa-book-open"></i> Courses</a></li>
+                <li><a href="resources.html"><i class="fa-solid fa-link"></i> Resources</a></li>
+                <li><a href="tasks.html"><i class="fa-solid fa-list-check"></i> Tasks</a></li>
+                <li><a href="schedules.html"><i class="fa-solid fa-calendar"></i> Schedules</a></li>
+                <li><a href="profile.html"><i class="fa-solid fa-user"></i> Profile</a></li>
+                <li><button id="logoutButton">Logout</button></li>
+            </ul>
+        </aside>
+        <main class="content">
+            <div id="schedules-container"></div>
+            <div class="add-schedule">
+                <button id="add-schedule-btn">Add Schedule</button>
+            </div>
+            <div id='calendar'></div>
+        </main>
+    </div>
+
+    <script src="js/schedules.js"></script>
+    <script src="js/modalFunctions.js"></script>
+    <script src="js/auth.js"></script>
+
+    <!--Add schedule form-->
+     <div id="addScheduleModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('addScheduleModal')">&times;</span>
+            <h2>Add Schedule</h2>
+            <form id="addScheduleForm">
+                <label for="scheduleCourse">Course:</label>
+                <input type="text" id="scheduleCourse" name="scheduleCourse" required>
+                <label for="scheduleDay">Day:</label>
+                <input type="text" id="scheduleDay" name="scheduleDay" required>
+                <label for="scheduleStartTime">Start Time:</label>
+                <input type="time" id="scheduleStartTime" name="scheduleStartTime" required>
+                <label for="scheduleEndTime">End Time:</label>
+                <input type="time" id="scheduleEndTime" name="scheduleEndTime" required>
+                <label for="scheduleLocation">Location:</label>
+                <input type="text" id="scheduleLocation" name="scheduleLocation" required>
+                <button type="submit">Add Schedule</button>
+            </form>
+        </div>
+    </div>
+
+
+    <div id="editScheduleModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('editScheduleModal')">&times;</span>
+            <h2>Edit Schedule</h2>
+            <form id="editScheduleForm">
+                <input type="hidden" id="editScheduleFormScheduleId" name="scheduleId">
+                <label for="editScheduleCourse">Course:</label>
+                <input type="text" id="editScheduleFormScheduleCourse" name="scheduleCourse" required>
+                <label for="editScheduleDay">Day:</label>
+                <input type="text" id="editScheduleFormScheduleDay" name="scheduleDay" required>
+                <label for="editScheduleStartTime">Start Time:</label>
+                <input type="time" id="editScheduleFormScheduleStartTime" name="scheduleStartTime" required>
+                <label for="editScheduleEndTime">End Time:</label>
+                <input type="time" id="editScheduleFormScheduleEndTime" name="scheduleEndTime" required>
+                <label for="editScheduleLocation">Location:</label>
+                <input type="text" id="editScheduleFormScheduleLocation" name="scheduleLocation" required>
+                <button type="submit" id="editScheduleFormSaveChangesButton">Save Changes</button>
+            </form>
+        </div>
+    </div> 
+    
+
+
+</body>
+</html>
